@@ -1,23 +1,16 @@
 package util;
 
-public class Tree {
-    private int data;
-    Tree left;
-    Tree right;
+public class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
 
-    public Tree(int data) {
-        this.data = data;
+    public TreeNode(int val) {
+        this.val = val;
         this.left = this.right = null;
     }
 
-    public Tree() {
+    public TreeNode() {
     }
 
-    public int getData() {
-        return data;
-    }
-
-    public void setData(int data) {
-        this.data = data;
-    }
 }
