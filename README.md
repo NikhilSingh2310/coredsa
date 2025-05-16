@@ -7,7 +7,7 @@ Git Clone :
 https://github.com/NikhilSingh2310/coredsa.git
 ```
 ```
-cd my-project
+cd coredsa
 mvn install
 ```
 
