@@ -1,5 +1,4 @@
 import util.BinaryTree;
-import util.TreeNode;
 
 import java.util.Scanner;
 
@@ -17,5 +16,8 @@ public class Main {
         tree.inorderTraversal();
         tree.preorderTraversal();
         tree.postorderTraversal();
+
+        System.out.println(tree.getHeightBFS());
+        System.out.println(tree.getHeightDFS());
     }
 }

@@ -79,4 +79,42 @@ public class BinaryTree {
         System.out.print(root.val + " ");
     }
 
+    public int getHeightBFS() {
+        return bfsHeightRec(root);
+    }
+
+    public int getHeightDFS() {
+        return dfsHeightRec(root);
+    }
+
+    private int dfsHeightRec(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return 1 + Math.max(dfsHeightRec(root.left), dfsHeightRec(root.right));
+    }
+
+    private int bfsHeightRec(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int height = 0;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            height++;
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode parent = queue.poll();
+                if (parent.left != null) {
+                    queue.add(parent.left);
+                }
+                if (parent.right != null) {
+                    queue.add(parent.right);
+                }
+            }
+        }
+        return height;
+    }
+
 }
